@@ -12,20 +12,78 @@
 }
 
 .time-select,
-.player-container,
-.sound-picker {
+.sound-picker,
+.player-container {
   height: 80%;
   flex: 1;
-}
-
-.time-select {
-  background: lightblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .player-container {
-  background: lightgreen;
+  position: relative;
 }
 
-.sound-picker {
-  background-color: lightcoral;
+.player-container svg {
+  position: absolute;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -10;
+}
+
+.time-display {
+  position: absolute;
+  bottom: 10%;
+  font-size: 50px;
+  color: white;
+}
+
+.time-select button,
+.sound-picker button {
+  color: white;
+  background: none;
+  width: 30%;
+  height: 10%;
+  border: 2px solid white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 20px;
+  transition: all 0.4s;
+}
+
+.time-select button:hover {
+  color: black;
+  background: white;
+}
+
+.sound-picker button {
+  width: 120px;
+  height: 120px;
+  background: none;
+  border-radius: 50%;
+  padding: 30px;
+}
+
+.sound-picker button:nth-child(1) {
+  background: cadetblue;
+}
+
+.sound-picker button:nth-child(2) {
+  background: tomato;
+}
+
+.sound-picker button img {
+  height: 100%;
 }
